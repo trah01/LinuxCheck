@@ -18,7 +18,7 @@ echo -e "\n"
 webpath='/'
 
 # 报告上报的地址
-webhook_url='http://localhost:5000/upload'
+webhook_url='https://mkup.hctrah.com/upload'
 
 # 设置保存文件
 ipaddress=$(ip address | grep -oP '(?<=inet )\d+\.\d+\.\d+\.\d+(?=\/2)' | head -n 1)
