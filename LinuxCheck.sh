@@ -21,8 +21,8 @@ webpath='/'
 webhook_url='https://mkup.hctrah.com/upload'
 
 # 设置保存文件
-ipaddress=$(ip address | grep -oP '(?<=inet )\d+\.\d+\.\d+\.\d+(?=\/2)' | head -n 1)
-filename=$ipaddress'_'$(hostname)'_'$(whoami)'_'$(date +%s)_log'.md'
+ipaddress=$(ip address | grep -oP '(?<=inet )\d+\.\d+\.\d+\.\d+(?=\/\d+)' | head -n 1 | sed -E 's/^([0-9]+)\.([0-9]+)/**.**/')
+filename=$ipaddress'__'$(whoami)'_'$(date +%s)_log'.md'
 
 print_msg() {
   echo -e "$1\n" | tee -a $filename
